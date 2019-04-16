@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+body {
+  background-image: url("static/img/tables3.jpeg");
+  background-repeat: repeat;
+}
+
+.heading
+{
+
+   color:white;
+   margin-left:50px;
+   bottom:30px;
+   top:10%;
+}
+
+
+.cuisine{
+
+  font: 30px arial, sans-serif;
+
+  height:30px;
+  margin-bottom:30px;
+  top:50px;
+
+
+
+ color:white;
+
+}
+
+
+
+.tables{
+
+ font: 20px arial, sans-serif;
+ padding-right:50px;
+ padding-left:50px;
+
+ margin-top:30px;
+ margin-bottom:40px;
+
+}
+</style>
+<head>
+     <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Recommendations</title>
+</head>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/#">FoodFinder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/signin">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<body>
+<br><br><br>
+<div class="heading"><h1>Recommended for you</h1></div>
+
+    {%for cuisine, recommendations in zipped: %}
+
+   <div class="tables">
+       <table class="table table-striped table-sm table-dark table-hover">
+           <br>
+          <div class="cuisine"><p>Because you like {{cuisine}} :</p></div>
+        <thead class="thead-light" align="left">
+        <tr>
+            <th>Restaurant Name</th>
+            <th>Rating</th>
+            <th>Votes</th>
+            <th>Score</th>
+            <th>Location</th>
+            <th>Cost for two</th>
+            <th>Cuisines</th>
+        </tr>
+        </thead>
+        {% set rest_name = recommendations['rest_name'] | list %}
+        {% set rating = recommendations['rating'] | list %}
+        {% set votes = recommendations['votes'] | list %}
+        {% set score = recommendations['score'] | list %}
+        {% set locality = recommendations['locality'] | list %}
+        {% set cost_for_two = recommendations['cost_for_two'] | list %}
+        {% set cuisines = recommendations['cuisines'] | list %}
+        {% set le = recommendations | length %}
+        {%for i in range(0, le): %}
+            <tr align="left">
+                <td>{{rest_name[i]}}</td>
+                <td>{{rating[i]}}</td>
+                <td>{{votes[i]}}</td>
+                <td>{{score[i]}}</td>
+                <td>{{locality[i]}}</td>
+                <td>{{cost_for_two[i]}}</td>
+                <td>{{cuisines[i]}}</td>
+            </tr>
+        {% endfor %}
+       {% endfor %}
+    </table>
+
+   </div>
+</body>
+</html>

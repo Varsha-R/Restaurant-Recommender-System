@@ -1,0 +1,321 @@
+
+<style type="text/css">
+    .para{
+      font: 25px  "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+       color:black;
+       font-size: 200%;
+       margin-left: 50px;
+       top:0%;
+      position:relative;
+      font-style: normal;
+    }
+    #list{
+      position:relative;
+      left: 70%;
+    }
+    .thumbnail{
+    	font: 15px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+       color:black;
+    }
+    .wrapper {
+        text-align: center;
+    }
+
+    .button {
+        position: absolute;
+        top: 50%;
+    }
+
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/#">FoodFinder</a>
+        </div>
+        <ul class="nav navbar-nav" id="list">
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<form method="post" action="{{url_for('display_recommendations')}}">
+<div class="para"><p>Please pick the cuisines that you would prefer:</p></div><br><br>
+<div class="container">
+<div class="row">
+    <div class="col-sm-3">
+        <div class="thumbnail">
+            <img src="static/img/south.jpg" alt="Dosa" style="width:100%;height:200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="South Indian">South Indian</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+            <img src="static/img/north.jpg" alt="north" style="width:100%;height:200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="North Indian">North Indian</label>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+            <img src="static/img/asian.png" alt="asian" style="width:100%;height:200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Asian">Asian</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="thumbnail">
+            <img src="static/img/medit.jpg" alt="mediterranean" style="width:100%;height:200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Mediterranean">Mediterranean</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+ </div> 
+
+
+ <div class="row">
+    <div class="col-sm-3">
+        <div class="thumbnail">
+            <img src="static/img/chinese.jpg" alt="chinese" style="width:100%;height:200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Chinese">Chinese</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+            <img src="static/img/japanese.jpg" alt="japanese" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Japanese">Japanese</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+    <div class="col-sm-3">
+        <div class="thumbnail">
+            <img src="static/img/turkish.jpg" alt="turkish" style="width:100%;height:200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Turkish">Turkish</label>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/arabian.jpg" alt="arabian" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Arabian">Arabian</label>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/burmese.jpg" alt="burmese" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Burmese">Burmese</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/italian.png" alt="italian" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Italian">Italian</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/greek.jpg" alt="greek" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Greek">Greek</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/American.jpg" alt="American" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="American">American</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/korean.jpg" alt="korean" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Korean">Korean</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/mexican.jpg" alt="mexican" style="width:100%;height:200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Mexican">Mexican</label>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/thai.jpg" alt="thai" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Thai">Thai</label>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+
+
+
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/andhra.jpg" alt="andhra" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Andhra">Andhra</label>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+ </div>
+
+ <div class="row">
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/lebanese.jpg" alt="lebanese" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Lebanese">Lebanese</label>
+                </div>
+            </div>
+       
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/french.jpg" alt="french" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="French">French</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+     <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/steak.jpg" alt="steak" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Steak">Steak</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="thumbnail">
+
+            <img src="static/img/streetfood.jpg" alt="french" style="width:100%;height: 200px">
+            <div class="caption">
+                <div class="checkbox">
+                    <label><input type="checkbox" name ="selected_cuisine" value="Street Food">Street Food</label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</div>
+</div>
+    <div class="wrapper">
+            <button class="btn btn-primary btn-lg btn-dark">Go for it!</button>
+    </div>
+</form>
+
+
