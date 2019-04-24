@@ -39,12 +39,13 @@ def content_based_recommender(user, titles, indices, cosine_sim):
 		if user[i]['rest_name'] in df_non_rec['rest_name'].values or user[i]['rest_name'] not in df_restaurants['rest_name'].values:
 			continue
 		else:
-			list_of_recommendation = cuisine_recommendations(user[i]['rest_name'], titles, indices, cosine_sim)
-			for i in range(0, len(list_of_recommendation)):
-				dataframe = {}
-				dataframe['rest_name'] = list_of_recommendation[i]
-				dataframe['rating'] = float(df_restaurants.loc[df_restaurants['rest_name'] == dataframe['rest_name']]['rating'].values[0])
-				final.append(dataframe)
+			if(df_restaurants.loc[df_restaurants['rest_name'] == user[i]['rest_name']]['rating'].iloc[0] > 3.0):
+				list_of_recommendation = cuisine_recommendations(user[i]['rest_name'], titles, indices, cosine_sim)
+				for i in range(0, len(list_of_recommendation)):
+					dataframe = {}
+					dataframe['rest_name'] = list_of_recommendation[i]
+					dataframe['rating'] = float(df_restaurants.loc[df_restaurants['rest_name'] == dataframe['rest_name']]['rating'].values[0])
+					final.append(dataframe)
 	return final
 
 def collaborative_filtering_recommender(username):
